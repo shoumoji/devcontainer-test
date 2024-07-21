@@ -1,0 +1,29 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/go
+{
+	"name": "devcontainer's port forwarding test",
+	"dockerFile": "Dockerfile",
+	"portsAttributes": {
+		"8080": {
+			"label": "api hosted port",
+			"onAutoForward": "notify"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"go.useLanguageServer": true,
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"go.goroot": "/usr/local/go",
+				"go.gopath": "/home/vscode/go"
+			},
+			"extensions": [
+				"golang.go"
+			]
+		}
+	},
+	"remoteUser": "vscode",
+	"remoteEnv": {
+		"GOPATH": "/home/vscode/go"
+	}
+}
